@@ -17,6 +17,19 @@ repositories {
 	maven { url "http://husky.petcircle.com.au:8081/repository/maven-public/" }
 }
 
+dependencies {
+    compile "au.com.petcircle:model:+"
+    compile "au.com.petcircle:serviceBase:+"
+    compile "au.com.petcircle:apiConnector:+"
+    compile "io.swagger.core.v3:swagger-jaxrs2:2.0.3"
+
+    runtime "org.hibernate:hibernate-validator:5.2.4.Final"
+
+    testCompile "junit:junit:4.12"
+    testCompile "com.h2database:h2:1.4.194"
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.4'
+}
+
 uploadArchives {
     String nexus_username = credentials.nexus_username
     String nexus_password = credentials.nexus_password
